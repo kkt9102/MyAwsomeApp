@@ -4,7 +4,7 @@
  *
  * @format
  */
-
+// MODULE
 import React from 'react';
 import type {PropsWithChildren} from 'react';
 import {
@@ -25,6 +25,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+// COMPONENT
+import Login from './Login';
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
@@ -72,6 +74,7 @@ function App(): JSX.Element {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
+        <Login/>
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
