@@ -7,6 +7,8 @@
 // MODULE
 import React from 'react';
 import type {PropsWithChildren} from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {
   SafeAreaView,
   ScrollView,
@@ -27,6 +29,7 @@ import {
 
 // COMPONENT
 import Login from './Login';
+import Home from './Home';
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
@@ -58,6 +61,7 @@ function Section({children, title}: SectionProps): JSX.Element {
 }
 
 function App(): JSX.Element {
+  const Tab = createBottomTabNavigator();
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
@@ -65,8 +69,10 @@ function App(): JSX.Element {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
+    <NavigationContainer>
+      <Tab.Navigator>
+        {/* <SafeAreaView style={backgroundStyle}> */}
+        {/* <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
@@ -74,7 +80,7 @@ function App(): JSX.Element {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
-        <Login/>
+        <Login />
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
@@ -94,8 +100,12 @@ function App(): JSX.Element {
           </Section>
           <LearnMoreLinks />
         </View>
-      </ScrollView>
-    </SafeAreaView>
+      </ScrollView> */}
+        <Tab.Screen name="Login" component={Login} />
+        <Tab.Screen name="Home" component={Home} />
+        {/* </SafeAreaView> */}
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
 
