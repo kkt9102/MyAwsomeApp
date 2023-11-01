@@ -5,7 +5,7 @@ import {View, Text} from 'react-native';
 const Home = () => {
   return (
     <View>
-      <Text>aaaa</Text>
+      <Text>adasdasdasdasd</Text>
     </View>
   );
 };

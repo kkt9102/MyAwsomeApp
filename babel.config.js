@@ -21,6 +21,7 @@ module.exports = {
           '@components': './src/Components',
           '@screens': './src/Screens',
           '@assets': './src/Assets',
+          '@state': './src/State',
         },
       },
     ],
