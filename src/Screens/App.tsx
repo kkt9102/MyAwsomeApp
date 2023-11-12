@@ -8,6 +8,7 @@
 import React from 'react';
 // import type {PropsWithChildren} from 'react';
 
+import {GITHUB_DEV_KEY} from '@env';
 import {RecoilRoot} from 'recoil';
 
 // import {
@@ -32,6 +33,7 @@ import {RecoilRoot} from 'recoil';
 import Layout from '~/Components/Layout';
 
 function App(): JSX.Element {
+  console.log('APP_URL :: ', GITHUB_DEV_KEY);
   return (
     <RecoilRoot>
       {/* <NavigationContainer>
