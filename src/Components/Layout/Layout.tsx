@@ -10,6 +10,7 @@ import {LoginState} from '~/State/commonState';
 // COMPONENT
 import Login from '~/Screens/Login';
 import Home from '~/Screens/Home';
+import Calendar from '~/Screens/Calendar';
 const Layout = () => {
   const Tab = createBottomTabNavigator();
   const isLogin = useRecoilValue(LoginState);
@@ -21,6 +22,7 @@ const Layout = () => {
       ) : (
         <Tab.Navigator>
           <Tab.Screen name="Home" component={Home} />
+          <Tab.Screen name="Calendar" component={Calendar} />
         </Tab.Navigator>
       )}
     </NavigationContainer>
