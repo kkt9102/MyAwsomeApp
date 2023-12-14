@@ -11,7 +11,10 @@ import {LoginState} from '~/State/commonState';
 import Login from '~/Screens/Login';
 import Home from '~/Screens/Home';
 import Calendar from '~/Screens/Calendar';
-const Layout = () => {
+// PROPS TYPE
+type LayoutProps = {};
+
+const Layout: React.FC<LayoutProps> = () => {
   const Tab = createBottomTabNavigator();
   const isLogin = useRecoilValue(LoginState);
   return (
@@ -20,9 +23,33 @@ const Layout = () => {
       {isLogin ? (
         <Login />
       ) : (
-        <Tab.Navigator>
-          <Tab.Screen name="Home" component={Home} />
-          <Tab.Screen name="Calendar" component={Calendar} />
+        <Tab.Navigator
+          screenOptions={{
+            headerShown: false,
+            tabBarInactiveTintColor: 'gray',
+            tabBarStyle: {backgroundColor: '#fff'},
+          }}>
+          <Tab.Screen
+            name="Home"
+            component={Home}
+            options={{
+              title: '홈',
+              // tabBarIcon: () => {
+              //   return <HomeIcon width={29} height={20} />;
+              // },
+            }}
+          />
+          <Tab.Screen
+            name="Calendar"
+            component={Calendar}
+            options={{
+              tabBarStyle: {
+                // display: 'none',
+                height: 0,
+                overflow: 'hidden',
+              },
+            }}
+          />
         </Tab.Navigator>
       )}
     </NavigationContainer>

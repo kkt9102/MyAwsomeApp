@@ -4,10 +4,13 @@
     "baseUrl": "./src",
     "paths": {
       "~/*": ["./*"],
-      "@components/*": ["components/*"],
-      "@screens/*": ["screens/*"],
-      "@assets/*": ["assets/*"],
-      "@query/*": ["query/*"]
-    },
-  }  
+      "@components/*": ["Components/*"],
+      "@screens/*": ["Screens/*"],
+      "@assets/*": ["Assets/*"],
+      "@query/*": ["Query/*"],
+      "@state/*": ["State/*"],
+      "@api/*": ["API/*"],
+      "@json/*": ["JSON/*"]
+    }
+  }
 }

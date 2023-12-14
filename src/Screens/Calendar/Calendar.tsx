@@ -1,9 +1,11 @@
 // MODULE
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 // HOOK
 import {getMyRepositories} from '~/API/githubAPI';
-const Calendar = () => {
+// PROPS TYPE
+type CalendarProps = {};
+const Calendar: React.FC<CalendarProps> = () => {
   const [data, setData] = useState([]);
   const Test = async () => {
     try {
