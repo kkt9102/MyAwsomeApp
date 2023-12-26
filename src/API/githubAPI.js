@@ -15,12 +15,11 @@ export const getMyRepositories = async () => {
           Authorization: `Bearer ${accessToken}`,
         },
       })
-      .then(res => {
-        resolve(res);
-        console.log(res);
+      .then(response => {
+        resolve(response);
       })
-      .catch(err => {
-        reject(err);
+      .catch(error => {
+        reject(error);
       });
   });
 };

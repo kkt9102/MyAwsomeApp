@@ -11,6 +11,8 @@ import {LoginState} from '~/State/commonState';
 import Login from '~/Screens/Login';
 import Home from '~/Screens/Home';
 import Calendar from '~/Screens/Calendar';
+import Navigation from '../Navigation';
+import MyPage from '~/Screens/MyPage';
 // PROPS TYPE
 type LayoutProps = {};
 
@@ -24,32 +26,15 @@ const Layout: React.FC<LayoutProps> = () => {
         <Login />
       ) : (
         <Tab.Navigator
+          tabBar={props => <Navigation {...props} />}
           screenOptions={{
             headerShown: false,
             tabBarInactiveTintColor: 'gray',
             tabBarStyle: {backgroundColor: '#fff'},
           }}>
-          <Tab.Screen
-            name="Home"
-            component={Home}
-            options={{
-              title: '홈',
-              // tabBarIcon: () => {
-              //   return <HomeIcon width={29} height={20} />;
-              // },
-            }}
-          />
-          <Tab.Screen
-            name="Calendar"
-            component={Calendar}
-            options={{
-              tabBarStyle: {
-                // display: 'none',
-                height: 0,
-                overflow: 'hidden',
-              },
-            }}
-          />
+          <Tab.Screen name="Home" component={Home} />
+          <Tab.Screen name="Calendar" component={Calendar} />
+          <Tab.Screen name="MyPage" component={MyPage} />
         </Tab.Navigator>
       )}
     </NavigationContainer>
